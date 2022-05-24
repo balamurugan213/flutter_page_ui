@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_page_ui/Pages/user_creator/homepage.dart';
 import 'package:flutter_page_ui/Pages/user_creator/login_page.dart';
 import 'package:flutter_page_ui/Pages/user_creator/mainpage.dart';
+import 'package:flutter_page_ui/Pages/wallet_app/wallet_page.dart';
 import 'package:flutter_page_ui/project_grids.dart';
 import 'package:flutter_page_ui/services/theme_bloc.dart';
 import 'package:flutter_page_ui/themes.dart';
@@ -11,7 +12,7 @@ void main() {
 }
 
 class MyApp extends StatefulWidget {
-  MyApp({Key? key}) : super(key: key);
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   State<MyApp> createState() => _MyAppState();
@@ -48,9 +49,11 @@ class _MyAppState extends State<MyApp> {
       darkTheme: darkBee,
       themeMode: themes.themeMode,
       routes: {
-        '/': (context) => ProjectGrids(
-              themes: themes,
-            ),
+        '/': (context) =>
+            //  ProjectGrids(
+            // themes: themes,
+            // ),
+            WalletHomePage(),
         '/user_creator': (context) => const MainPage(),
       },
       // LoginPage(),

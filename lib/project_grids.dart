@@ -51,46 +51,13 @@ class _ProjectGridsState extends State<ProjectGrids> {
       crossAxisSpacing: 4,
       children: [
         // for (int i = 0; i < 20; i++)
-        InkWell(
-          onTap: () {
-            Navigator.pushNamed(
-              context,
-              '/user_creator',
-            );
-          },
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Container(
-              decoration: BoxDecoration(
-                color: color[3],
-                borderRadius: BorderRadius.circular(10),
-              ),
-
-              child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Image(
-                      image: AssetImage("user_creator.jpg"),
-                      fit: BoxFit.cover,
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(16.0),
-                      child: Text(
-                        "User Creator",
-                        style: Theme.of(context).textTheme.headline5,
-                      ),
-                    ),
-                  ]),
-              // width: 100,
-            ),
-          ),
-        ),
+        const GridItems(),
         Padding(
           padding: const EdgeInsets.all(8.0),
           child: Container(
             color: color[3],
 
-            child: Column(children: [
+            child: Column(children: const [
               Image(
                 image: AssetImage("wallet.jpg"),
                 fit: BoxFit.cover,
@@ -103,6 +70,49 @@ class _ProjectGridsState extends State<ProjectGrids> {
           ),
         ),
       ],
+    );
+  }
+}
+
+class GridItems extends StatelessWidget {
+  const GridItems({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: () {
+        Navigator.pushNamed(
+          context,
+          '/user_creator',
+        );
+      },
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Container(
+          decoration: const BoxDecoration(
+            color: Color.fromARGB(255, 159, 179, 189),
+            // borderRadius: BorderRadius.circular(10),
+          ),
+
+          child:
+              Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+            const Image(
+              image: AssetImage("user_creator.jpg"),
+              fit: BoxFit.cover,
+            ),
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Text(
+                "User Creator",
+                style: Theme.of(context).textTheme.headline5,
+              ),
+            ),
+          ]),
+          // width: 100,
+        ),
+      ),
     );
   }
 }

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_page_ui/Pages/user_creator/homepage.dart';
-import 'package:flutter_page_ui/Pages/user_creator/login_page.dart';
+// import 'package:flutter_page_ui/Pages/user_creator/homepage.dart';
+// import 'package:flutter_page_ui/Pages/user_creator/login_page.dart';
 import 'package:flutter_page_ui/Pages/user_creator/mainpage.dart';
 import 'package:flutter_page_ui/Pages/wallet_app/wallet_page.dart';
+import 'package:flutter_page_ui/loading_page.dart';
 import 'package:flutter_page_ui/project_grids.dart';
 import 'package:flutter_page_ui/services/theme_bloc.dart';
 import 'package:flutter_page_ui/themes.dart';
@@ -49,12 +50,13 @@ class _MyAppState extends State<MyApp> {
       darkTheme: darkBee,
       themeMode: themes.themeMode,
       routes: {
-        '/': (context) =>
-            //  ProjectGrids(
-            // themes: themes,
-            // ),
-            WalletHomePage(),
+        '/': (context) => ProjectGrids(
+              themes: themes,
+            ),
+        // WalletHomePage(),
         '/user_creator': (context) => const MainPage(),
+        '/wallet_page': (context) => const WalletHomePage(),
+        '/loading': (context) => const LoadingPage()
       },
       // LoginPage(),
       // Homepage()

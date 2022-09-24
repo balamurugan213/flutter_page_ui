@@ -1,9 +1,9 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_page_ui/widgets/responsiv.dart';
+import 'package:flutter_page_ui/widgets/responsive.dart';
 
 class WalletHomePage extends StatefulWidget {
-  WalletHomePage({Key? key}) : super(key: key);
+  const WalletHomePage({Key? key}) : super(key: key);
 
   @override
   State<WalletHomePage> createState() => _WalletHomePageState();
@@ -13,7 +13,7 @@ class _WalletHomePageState extends State<WalletHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF1E1E2A),
+      backgroundColor: const Color(0xFF1E1E2A),
       body: SizedBox(
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
@@ -56,11 +56,39 @@ class _WalletHomePageState extends State<WalletHomePage> {
                 child: Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 16),
                     child: Row(
-                      children: [
-                        IconGrid(),
-                        IconGrid(),
-                        IconGrid(),
-                        IconGrid(),
+                      children: const [
+                        IconGrid(
+                          icon: Icon(
+                            Icons.payment_outlined,
+                            size: 36,
+                            color: Color(0x6DFFFFFF),
+                          ),
+                          label: "Pay",
+                        ),
+                        IconGrid(
+                          icon: Icon(
+                            Icons.notes_rounded,
+                            size: 36,
+                            color: Color(0x6DFFFFFF),
+                          ),
+                          label: "Bills",
+                        ),
+                        IconGrid(
+                          icon: Icon(
+                            Icons.qr_code_scanner,
+                            size: 36,
+                            color: Color(0x6DFFFFFF),
+                          ),
+                          label: "Scan",
+                        ),
+                        IconGrid(
+                          icon: Icon(
+                            Icons.more,
+                            size: 36,
+                            color: Color(0x6DFFFFFF),
+                          ),
+                          label: "More",
+                        ),
                       ],
                     )),
               ),
@@ -88,7 +116,7 @@ class _WalletHomePageState extends State<WalletHomePage> {
               ),
               SizedBox(
                 width: 600,
-                height: 100,
+                height: 91,
                 child: ScrollConfiguration(
                   behavior: ScrollConfiguration.of(context).copyWith(
                     dragDevices: {
@@ -97,7 +125,7 @@ class _WalletHomePageState extends State<WalletHomePage> {
                     },
                   ),
                   child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 16),
+                    padding: const EdgeInsets.symmetric(horizontal: 24),
                     child: ListView.builder(
                         scrollDirection: Axis.horizontal,
                         itemCount: 15,
@@ -105,11 +133,11 @@ class _WalletHomePageState extends State<WalletHomePage> {
                           return Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Container(
-                              height: 80,
-                              width: 80,
+                              height: 75,
+                              width: 75,
                               decoration: BoxDecoration(
-                                color: Colors.yellow,
-                                borderRadius: BorderRadius.circular(50),
+                                color: const Color.fromARGB(255, 36, 69, 255),
+                                borderRadius: BorderRadius.circular(75),
                               ),
                             ),
                           );
@@ -194,7 +222,12 @@ class _WalletHomePageState extends State<WalletHomePage> {
 class IconGrid extends StatelessWidget {
   const IconGrid({
     Key? key,
+    required this.icon,
+    required this.label,
   }) : super(key: key);
+
+  final Icon icon;
+  final String label;
 
   @override
   Widget build(BuildContext context) {
@@ -210,19 +243,13 @@ class IconGrid extends StatelessWidget {
             decoration: BoxDecoration(
                 color: Color(0xFF242834),
                 borderRadius: BorderRadius.circular(10)),
-            child: const Padding(
-                padding: EdgeInsets.all(16.0),
-                child: Icon(
-                  Icons.payment_outlined,
-                  size: 48,
-                  color: Colors.white,
-                )),
+            child: Padding(padding: const EdgeInsets.all(16.0), child: icon),
           ),
           const SizedBox(
             height: 8,
           ),
           Text(
-            "Pay",
+            label,
             style: Theme.of(context)
                 .textTheme
                 .headline6!
@@ -251,7 +278,7 @@ class DataGrid extends StatelessWidget {
           padding: const EdgeInsets.all(16.0),
           child:
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-            Text(
+            const Text(
               "Income",
             ),
             Text(

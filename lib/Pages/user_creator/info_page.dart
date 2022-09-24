@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_page_ui/Pages/user_creator/login_page.dart';
 import 'package:flutter_page_ui/widgets/custom_page_route.dart';
-import 'package:flutter_page_ui/widgets/responsiv.dart';
+import 'package:flutter_page_ui/widgets/responsive.dart';
 import 'package:flutter_page_ui/widgets/responsive_body.dart';
 import 'package:flutter_page_ui/widgets/widget_scrollable.dart';
 
@@ -16,7 +16,7 @@ class InfoPage extends StatelessWidget {
         height: MediaQuery.of(context).size.height,
         color: const Color(0xFF0A192E),
         child: WidgetScrollable(
-          childwidget: buildContent(context),
+          childWidget: buildContent(context),
           height: 856,
         ));
   }
@@ -57,7 +57,7 @@ class InfoPage extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
-                        "Intraday trading is an exciting and mysterious activity for most people. The flashing profit-making intraday trading videos on YouTube excite most. If you ask any",
+                        "Inter day trading is an exciting and mysterious activity for most people. The flashing profit-making intraday trading videos on YouTube excite most. If you ask any",
                         maxLines: 3,
                         overflow: TextOverflow.ellipsis,
                         style: Theme.of(context).textTheme.headline6?.copyWith(

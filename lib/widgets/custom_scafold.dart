@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_page_ui/services/theme_bloc.dart';
 
-class BuildScafold extends StatefulWidget {
-  const BuildScafold({Key? key, required this.themes, required this.body})
+class BuildScaffold extends StatefulWidget {
+  const BuildScaffold({Key? key, required this.themes, required this.body})
       : super(key: key);
 
   final ThemeBloc themes;
   final Widget body;
 
   @override
-  State<BuildScafold> createState() => _BuildScafoldState();
+  State<BuildScaffold> createState() => _BuildScaffoldState();
 }
 
-class _BuildScafoldState extends State<BuildScafold> {
+class _BuildScaffoldState extends State<BuildScaffold> {
   // @override
   // void dispose() {
   //   widget.themes.removeListener(themeListener);
